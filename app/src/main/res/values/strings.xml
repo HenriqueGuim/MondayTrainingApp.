@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Serlima</string>
+    <string name="tempo_por_zona">tempo por zona</string>
+    <string name="pse">pse</string>
+    <string name="hr_tss">hr tss</string>
+    <string name="tss">tss</string>
+    <string name="em_minutos">em minutos</string>
+    <string name="valor_tss">valor tss</string>
+    <string name="tempo">tempo</string>
+    <string name="calcular">calcular</string>
+    <string name="disponibilidade">disponibilidade</string>
+    <string name="valor_hrtss_text">valor hrTss</string>
+    <string name="empty" />
+    <string name="zona_5">zona 5</string>
+    <string name="zona_4">zona 4</string>
+    <string name="zona_3">zona 3</string>
+    <string name="zona_2">zona 2</string>
+    <string name="zona_1">zona 1</string>
+    <string name="intruduz_os_valores_em_minutos_e_pressiona_calcular">intruduz os valores em minutos e pressiona calcular</string>
+    <string name="_1_10">1-10</string>
+    <string name="valor_pse">valor pse</string>
+    <string name="tempo_em_minutos">tempo em minutos</string>
+    <string name="tipo_de_atividade">tipo de atividade</string>
+    <string name="ter_a_feira">Terça-feira</string>
+    <string name="quarta_feira">Quarta-feira</string>
+    <string name="quinta_feira">Quinta-feira</string>
+    <string name="sexta_feira">Sexta-feira</string>
+    <string name="s_bado">Sábado</string>
+    <string name="enviar">enviar</string>
+</resources>

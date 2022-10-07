@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <EditText
+        android:id="@+id/thursdayTimeValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:hint="@string/tempo_em_minutos"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textColorHint="#546E7A"
+        app:layout_constraintBottom_toBottomOf="@+id/thursdayTrainingType"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.409"
+        app:layout_constraintStart_toEndOf="@+id/thursdayTrainingType"
+        app:layout_constraintTop_toBottomOf="@+id/wednesdayTimeValue"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <EditText
+        android:id="@+id/fridayTimeValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:hint="@string/tempo_em_minutos"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textColorHint="#546E7A"
+        app:layout_constraintBottom_toBottomOf="@+id/fridayTrainingType"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toEndOf="@+id/fridayTrainingType"
+        app:layout_constraintTop_toBottomOf="@+id/thursdayTimeValue" />
+
+    <EditText
+        android:id="@+id/saturdayTimeValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:hint="@string/tempo_em_minutos"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textColorHint="#546E7A"
+        app:layout_constraintBottom_toBottomOf="@+id/saturdayTrainingType"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.409"
+        app:layout_constraintStart_toEndOf="@+id/saturdayTrainingType"
+        app:layout_constraintTop_toBottomOf="@+id/fridayTimeValue" />
+
+    <EditText
+        android:id="@+id/wednesdayTimeValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:hint="@string/tempo_em_minutos"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textColorHint="#546E7A"
+        app:layout_constraintBottom_toBottomOf="@+id/wednesdayTrainingType"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toEndOf="@+id/wednesdayTrainingType"
+        app:layout_constraintTop_toBottomOf="@+id/tuesdayTimeValue" />
+
+    <TextView
+        android:id="@+id/wednesdayTrainingType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:background="@android:drawable/editbox_background"
+        android:drawablePadding="16dp"
+        android:padding="12dp"
+        android:text="@string/tipo_de_atividade"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wedTitle"
+        app:drawableEndCompat="@android:drawable/arrow_down_float" />
+
+    <TextView
+        android:id="@+id/thursdayTrainingType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:background="@android:drawable/editbox_background"
+        android:drawablePadding="16dp"
+        android:padding="12dp"
+        android:text="@string/tipo_de_atividade"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/thursTitle"
+        app:drawableEndCompat="@android:drawable/arrow_down_float" />
+
+    <TextView
+        android:id="@+id/fridayTrainingType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:background="@android:drawable/editbox_background"
+        android:drawablePadding="16dp"
+        android:padding="12dp"
+        android:text="@string/tipo_de_atividade"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/friTitle"
+        app:drawableEndCompat="@android:drawable/arrow_down_float" />
+
+    <TextView
+        android:id="@+id/saturdayTrainingType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:background="@android:drawable/editbox_background"
+        android:drawablePadding="16dp"
+        android:padding="12dp"
+        android:text="@string/tipo_de_atividade"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/satTitle"
+        app:drawableEndCompat="@android:drawable/arrow_down_float" />
+
+    <TextView
+        android:id="@+id/tuesdayTrainingType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:background="@android:drawable/editbox_background"
+        android:drawablePadding="16dp"
+        android:padding="12dp"
+        android:text="@string/tipo_de_atividade"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tuesdayTitle"
+        app:drawableEndCompat="@android:drawable/arrow_down_float" />
+
+    <TextView
+        android:id="@+id/tuesdayTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/ter_a_feira"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/wedTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/quarta_feira"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tuesdayTrainingType" />
+
+    <TextView
+        android:id="@+id/thursTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/quinta_feira"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wednesdayTrainingType" />
+
+    <TextView
+        android:id="@+id/friTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/sexta_feira"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/thursdayTrainingType" />
+
+    <TextView
+        android:id="@+id/satTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/s_bado"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fridayTrainingType" />
+
+    <EditText
+        android:id="@+id/tuesdayTimeValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="58dp"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:hint="@string/tempo_em_minutos"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textColorHint="#546E7A"
+        app:layout_constraintBottom_toBottomOf="@+id/tuesdayTrainingType"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toEndOf="@+id/tuesdayTrainingType"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/availabilitySendButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/lightGrey"
+        android:text="@string/enviar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/saturdayTimeValue"
+        app:rippleColor="@color/lightGrey" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
