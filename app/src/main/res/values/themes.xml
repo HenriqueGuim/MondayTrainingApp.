@@ -12,6 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/actionBar</item>
         <!-- Customize your theme here. -->
+        <item name="fontFamily">@font/edmondsans_medium</item>
 
     </style>
 
