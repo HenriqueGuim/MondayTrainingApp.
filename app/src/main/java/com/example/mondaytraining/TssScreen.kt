@@ -5,6 +5,11 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.provider.Settings.Global.getString
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
@@ -14,6 +19,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.widget.addTextChangedListener
+import androidx.core.widget.doOnTextChanged
 
 
 class TssScreen : AppCompatActivity(), View.OnClickListener {
@@ -28,10 +35,17 @@ class TssScreen : AppCompatActivity(), View.OnClickListener {
 
         val calculateButton = findViewById<Button>(R.id.tssCalculateBttn);
         val sendButton = findViewById<Button>(R.id.tssSendBttn);
+        val inputTime = findViewById<EditText>(R.id.timeValue);
+
 
         calculateButton.setOnClickListener(this);
         sendButton.setOnClickListener(this);
+        inputTime.addTextChangedListener();
+        inputTime.doOnTextChanged { _, _, _, _ -> updateTime()  }
+
     }
+
+
 
     override fun onClick(p0: View?) {
         if (p0?.id == R.id.tssCalculateBttn || p0?.id == R.id.tssSendBttn) {
@@ -65,10 +79,29 @@ class TssScreen : AppCompatActivity(), View.OnClickListener {
             val bundle = Bundle()
             bundle.putString("tssValue", textView.text.toString())
             availabilityScreen.putExtras(bundle)
+            updateTime()
             if (p0.id == R.id.tssSendBttn){
                 startActivity(availabilityScreen)
             }
         }
+    }
+
+    fun updateTime() {
+
+            val convertedTime = findViewById<TextView>(R.id.tssTimeConverted)
+            val insertedTime = findViewById<EditText>(R.id.timeValue)
+            var insertedTimeValue = insertedTime.text.toString()
+
+            if (insertedTimeValue == "") insertedTimeValue = 0.toString()
+
+            if (insertedTimeValue.toInt() < 1){
+                convertedTime.text = getString(R.string.timeZero)
+                return
+            }
+            val hours = insertedTime.text.toString().toInt()/60
+            val minutes = insertedTime.text.toString().toInt()%60
+
+            convertedTime.text = getString(R.string.timeformat, hours, minutes)
     }
 
     fun tssCalculator(): Double {
@@ -181,3 +214,5 @@ class TssScreen : AppCompatActivity(), View.OnClickListener {
         startActivity(intent)
     }
 }
+
+

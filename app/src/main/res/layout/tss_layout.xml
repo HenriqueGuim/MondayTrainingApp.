@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/formattedTime"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -33,8 +34,9 @@
         android:text="@string/valor_tss"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/timeValue" />
 
     <EditText
         android:id="@+id/tssValue"
@@ -54,13 +56,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:text="@string/tempo"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tssValue" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/tssCalculateBttn"
@@ -70,6 +73,7 @@
         android:backgroundTint="@color/lightGrey"
         android:text="@string/calcular"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tssSendBttn"
         app:layout_constraintTop_toTopOf="@+id/tssSendBttn" />
 
     <Button
@@ -77,11 +81,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="60dp"
         android:backgroundTint="@color/lightGrey"
         android:text="@string/disponibilidade"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/timeValue" />
+        app:layout_constraintTop_toBottomOf="@+id/tssValue" />
 
     <TextView
         android:id="@+id/tssResult"
@@ -98,5 +102,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tssCalculateBttn"
         tools:text="Intruduz os valores e pressiona calcular" />
+
+    <TextView
+        android:id="@+id/tssTimeConverted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/timeZero"
+        app:layout_constraintBottom_toTopOf="@+id/tssValueText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeValue" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

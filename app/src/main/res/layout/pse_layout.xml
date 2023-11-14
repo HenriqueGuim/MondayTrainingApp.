@@ -25,10 +25,10 @@
         android:id="@+id/pseCalculateBttn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
         android:backgroundTint="@color/lightGrey"
         android:text="@string/calcular"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/pseSendBttn"
         app:layout_constraintTop_toTopOf="@+id/pseSendBttn" />
 
     <EditText
@@ -54,13 +54,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:text="@string/tempo"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pseValue" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/pseValue"
@@ -87,17 +88,28 @@
         android:text="@string/valor_pse"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/pseTimeValue" />
 
     <Button
         android:id="@+id/pseSendBttn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="60dp"
         android:backgroundTint="@color/lightGrey"
         android:text="@string/disponibilidade"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pseValue" />
+
+    <TextView
+        android:id="@+id/pseTimeConverted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/timeZero"
+        app:layout_constraintBottom_toTopOf="@+id/pseValueText"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pseTimeValue" />
 

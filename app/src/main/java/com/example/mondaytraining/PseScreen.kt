@@ -13,6 +13,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.widget.addTextChangedListener
+import androidx.core.widget.doOnTextChanged
 
 class PseScreen : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,9 +28,14 @@ class PseScreen : AppCompatActivity(), View.OnClickListener {
 
         val calculateButton = findViewById<Button>(R.id.pseCalculateBttn);
         val sendButton = findViewById<Button>(R.id.pseSendBttn);
+        val inputTime = findViewById<EditText>(R.id.pseTimeValue);
 
+
+        inputTime.addTextChangedListener();
+        inputTime.doOnTextChanged { _, _, _, _ -> updateTime()  }
         calculateButton.setOnClickListener(this);
         sendButton.setOnClickListener(this);
+
     }
 
     override fun onClick(p0: View?) {
@@ -59,6 +66,22 @@ class PseScreen : AppCompatActivity(), View.OnClickListener {
                 startActivity(availabilityScreen)
             }
         }
+    }
+
+    fun updateTime(){
+
+            val convertedTime = findViewById<TextView>(R.id.pseTimeConverted)
+            val insertedTime = findViewById<EditText>(R.id.pseTimeValue)
+
+            if (insertedTime.text.toString().toInt() < 1){
+                convertedTime.text = getString(R.string.timeZero)
+                return
+            }
+            val hours = insertedTime.text.toString().toInt()/60
+            val minutes = insertedTime.text.toString().toInt()%60
+
+            convertedTime.text = getString(R.string.timeformat, hours, minutes)
+
     }
 
     fun tssCalculator(): Double {

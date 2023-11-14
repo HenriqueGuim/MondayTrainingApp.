@@ -23,12 +23,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         val clickTssScreen = findViewById<Button>(R.id.tssButton);
         val clickHrTssScreen = findViewById<Button>(R.id.hr_tss_button);
-        val clickTimeZone = findViewById<Button>(R.id.timeZoneButton);
         val clickPse = findViewById<Button>(R.id.PseButton)
 
         clickTssScreen.setOnClickListener(this);
         clickHrTssScreen.setOnClickListener(this);
-        clickTimeZone.setOnClickListener(this);
         clickPse.setOnClickListener(this);
 
         supportActionBar?.title = "Treino de Segunda";
@@ -58,7 +56,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             when(view.id){
                 R.id.tssButton -> startActivity(tss)
                 R.id.hr_tss_button -> startActivity(hrTss)
-                R.id.timeZoneButton -> startActivity(timeZone)
                 R.id.PseButton -> startActivity(pse)
             }
         }

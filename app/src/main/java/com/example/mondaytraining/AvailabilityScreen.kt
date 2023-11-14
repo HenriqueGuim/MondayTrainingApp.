@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -15,7 +16,7 @@ import androidx.appcompat.app.AppCompatDelegate
 
 class AvailabilityScreen : AppCompatActivity(), View.OnClickListener {
     private val activitiesTypes: Array<String> =
-        arrayOf("Btt", "Estrada", "Rolo", "Corrida", "Trail", "Passadeira", "Natação")
+        arrayOf("Btt", "Estrada", "Rolo", "Corrida", "Trail", "Passadeira", "Natação", "Ginásio")
     private val activitiesTypesList: List<String> = listOf(*activitiesTypes)
 
     private lateinit var tuesTraining: TextView;
@@ -199,12 +200,12 @@ class AvailabilityScreen : AppCompatActivity(), View.OnClickListener {
         builder.setMultiChoiceItems(
             activitiesTypes,
             satSelectedActivities
-        ) { dialog, wich, iscCHecked ->
-            satSelectedActivities[wich] = iscCHecked;
+        ) { dialog, wich, isChecked ->
+            satSelectedActivities[wich] = isChecked;
             val currentItem = activitiesTypesList[wich];
             Toast.makeText(
                 applicationContext,
-                currentItem + " " + iscCHecked,
+                currentItem + " " + isChecked,
                 Toast.LENGTH_SHORT
             ).show();
         }
@@ -245,6 +246,14 @@ class AvailabilityScreen : AppCompatActivity(), View.OnClickListener {
         }
 
         messageToSent = "Bom dia Sérgio, \nO treino de segunda é: ${mondayTraining}.\n\n";
+
+        if (mondayTraining.equals("Bloco Z2 ou Descanso")){
+            messageToSent = "Bom dia Sérgio, \nO treino de segunda é: Bloco Z2.\n\n";
+        }
+        if (findViewById<Switch>(R.id.mondayRest).isChecked){
+            messageToSent = "Bom dia Sérgio, \nO treino de segunda é: descanso.\n\n";
+
+        }
 
         if ((tuesSelectedActivities.contains(true) && tuesdayTime <1) || (!tuesSelectedActivities.contains(true) && tuesdayTime >0)) {
             Util.showMessage("verifica os valores de terça-feira", applicationContext)
@@ -307,7 +316,7 @@ class AvailabilityScreen : AppCompatActivity(), View.OnClickListener {
     }
 
     fun buildFinalMessage(tuesdayTime:Int, wednesdayTime:Int, thursdayTime:Int, fridayTime:Int, saturdayTime:Int) {
-        if(saturdayTime > 0) {
+        if(tuesdayTime > 0) {
             val typeOfTraining = getTypeOfTraining(tuesSelectedActivities)
             val tuesdayMessage : String = "Terça feira: ${tuesdayTime} minutos de: ${typeOfTraining}\n\n"
             messageToSent = messageToSent.plus(tuesdayMessage)

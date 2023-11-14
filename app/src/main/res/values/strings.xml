@@ -29,4 +29,7 @@
     <string name="enviar">Enviar</string>
     <string name="acompanhamentoprofissional">Acompanhamento\nProfissional</string>
     <string name="created_by_nhenrique_guimar_es">Created by: \nHenrique Guimarães</string>
+    <string name="timeZero">00:00</string>
+    <string name="timeformat">%1$d:%2$d </string>
+    <string name="segunda_feira">Segunda-Feira</string>
 </resources>
